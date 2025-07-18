@@ -15,7 +15,7 @@ const Home = () => {
               <span className='italic font-sans font-bold text-shadow-lg/32'>YOU</span> envision it<br/>
               -I build it into <span className='italic font-sans font-extrabold text-shadow-lg/32'>REALITY.</span></h1>
             <NavLink to={'/contact'}>
-            <button className='hover:bg-green-500 hover:text-white h-auto w-1/3 sm:w-auto p-2 bg-blue-200 font-bold text-green-500 rounded-full'>Let's work!</button>
+            <button className='hover:bg-green-500 hover:text-white h-auto w-auto sm:w-1/6 sm:text-lg text-[10px] p-2 bg-blue-200 font-bold text-green-500 rounded-full'>Let's work!</button>
             </NavLink>
           </div>
 

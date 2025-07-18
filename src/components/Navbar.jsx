@@ -54,9 +54,9 @@ const Navbar = () => {
         <div
         ref={menuRef}
         className={`duration-500 md:static absolute bg-white rounded-2xl md:min-h-[5vh] min-h-[60vh] left-0
-          ${isMenuOpen ? 'top-0' : 'top-[-1000%]'}
+          ${isMenuOpen ? 'top-0' : 'top-[-1500%]'}
         md:w-auto w-full flex items-center px-5`}>
-          <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 cursor-pointer'>
+          <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-4 cursor-pointer'>
               <NavLink to='/'><li className=' active:text-red-500 '>Home</li></NavLink>
               <NavLink to='/products'><li className=' active:text-red-500'>Projects</li></NavLink>
               <NavLink to='/about'><li className=' active:text-red-500'>About</li></NavLink>
@@ -66,9 +66,9 @@ const Navbar = () => {
 
         <div className='flex items-center gap-5'>
           <button className='hover:bg-green-500 hover:text-white
-                        h-auto lg:w-[20vh] md:1/12 sm: 1/18 p-2 cursor-pointer
-                         bg-blue-200 font-bold text-green-500
-                         lg:text-lg md:text-sm rounded-full' onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
+                        hidden sm:flex h-auto lg:w-[20vh] w-auto text-[10px] sm:p-2 p-0 cursor-pointer
+                        bg-blue-200 font-bold text-green-500
+                        sm:text-lg rounded-full' onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
          <ion-icon  onClick={toggleMenu}
           className="text-3xl cursor-pointer md:hidden z-50 text-black"
           name={isMenuOpen ? 'close' : 'menu'}></ion-icon>
