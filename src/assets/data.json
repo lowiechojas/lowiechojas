@@ -1,0 +1,23 @@
+{
+    "jobs": [
+        {
+            "id": "1",
+            "title": "Sr. React Developer",
+            "salary": 50000,
+            "location": "London UK"
+
+        },
+         {
+            "id": "2",
+            "title": "Jr. React Developer",
+            "salary": 60000,
+            "location": "Makati, PH"
+        },
+        {
+            "id": "3",
+            "title": "QA Analyst",
+            "salary": 25000,
+            "location": "Makati, PH"
+        }
+    ]
+}
