@@ -8,6 +8,12 @@ const Contact = () => {
   const [email, setEmail] = React.useState('');
   const [message, setMessage] = React.useState('');
 
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const [isSent, setIsSent] = React.useState(false);
+  const [isError, setIsError] = React.useState(false);
+
+
   const navigate = useNavigate()
   const form = useRef();
 
@@ -20,6 +26,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+     setIsLoading(true); // Start loading
 
     emailjs.sendForm(
         import.meta.env.VITE_SERVICE_ID,
@@ -30,10 +37,18 @@ const Contact = () => {
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          setIsLoading(false); // Stop loading
+          setIsSent(true);
+          setIsError(false);
+          setName('');
+          setEmail('');
+          setMessage('');
+          setTimeout(() => setIsSent(false), 2000);
         },
         (error) => {
-          console.log('FAILED...', error.text);
+           setIsLoading(false); // Stop loading
+            setIsError(true);
+            setIsSent(false);
         },
       );
   };
@@ -41,8 +56,32 @@ const Contact = () => {
 
 
   return (
-    <div className='flex items-center justify-around bg-[#0c2b45] h-dvh w-screen p-4'>
+    <div className='grid grid-flow-row auto-rows-auto items-center justify-center bg-[#0c2b45] h-dvh w-screen p-4'>
 
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 z-20">
+                <svg
+                  className="animate-spin h-12 w-12 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  />
+                </svg>
+              </div>
+          )}
         <form className='bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4'  ref={form} onSubmit={sendEmail}>
           <div className='mb-4'>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstname">Company Name</label>
@@ -67,10 +106,18 @@ const Contact = () => {
 
             </textarea>
            </div>
-          <button type='submit' value="send" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
-            Send
-          </button>
+           <button
+              type="submit"
+              disabled={isLoading}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Send Email
+            </button>
+             {isSent && <p className='flex align-top text-green-500 text-3xl '>Email sent successfully!</p>}
+            {isError && <p className='flex text-red-500'>Failed to send email. Please try again.</p>}
         </form>
+
+       
      </div>
   );
 };
