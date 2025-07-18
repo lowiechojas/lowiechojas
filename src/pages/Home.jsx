@@ -10,12 +10,12 @@ const Home = () => {
     <div>
       
         <div className='flex flex-wrap items-center justify-around bg-[#0c2b40] w-screen h-fit pl-30 pr-30'>
-          <div className='grid gap-4'>
-            <h1 className='lg:text-7xl md:text-4xl sm:text-sm text-white'>
+          <div className='grid gap-4 p-4 sm:p-0'>
+            <h1 className='text-7xl text-white sm:p-0'>
               <span className='italic font-sans font-bold text-shadow-lg/32'>YOU</span> envision it<br/>
               -I build it into <span className='italic font-sans font-extrabold text-shadow-lg/32'>REALITY.</span></h1>
             <NavLink to={'/contact'}>
-            <button className='hover:bg-green-500 hover:text-white h-auto lg:w-1/3 md:1/6 sm: 1/12 p-2 bg-blue-200 font-bold text-green-500 rounded-full'>Let's work!</button>
+            <button className='hover:bg-green-500 hover:text-white h-auto w-1/3 sm:w-auto p-2 bg-blue-200 font-bold text-green-500 rounded-full'>Let's work!</button>
             </NavLink>
           </div>
 
