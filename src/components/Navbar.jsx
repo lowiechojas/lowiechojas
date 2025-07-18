@@ -45,7 +45,7 @@ const Navbar = () => {
                          lg:text-lg md:text-sm rounded-full' onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
          <ion-icon  onClick={toggleMenu}
           className="text-3xl cursor-pointer md:hidden z-50 text-black"
-          name={isMenuOpen ? 'close' : 'menu'}></ion-icon>
+          name={isMenuOpen ? 'menu' : 'close'}></ion-icon>
         </div>
     </div>
   )

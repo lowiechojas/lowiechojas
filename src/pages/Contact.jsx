@@ -61,25 +61,25 @@ const Contact = () => {
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-blue-400 bg-opacity-40 z-20">
                 <svg
-                  className="animate-spin h-5 w-5 text-white"
+                  className="animate-spin h-10 w-10 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  viewBox="0 0 50 50"
+                  viewBox="0 0 24 24"
                 >
                   <circle
                     className="opacity-25"
-                    cx="25"
-                    cy="25"
-                    r="20"
+                    cx="12"
+                    cy="12"
+                    r="10"
                     stroke="currentColor"
                     strokeWidth="5"
                   />
                   <path
                     className="opacity-75"
                     fill="currentColor"
-                    d="M25 5
-                      a20 20 0 0 1 0 40
-                      a20 20 0 0 1 0 -40"
+                    d="M12 2
+                      a10 10 0 0 1 0 20
+                      a10 10 0 0 1 0 -20"
                   />
                   </svg>
               </div>
