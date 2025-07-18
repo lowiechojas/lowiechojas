@@ -18,7 +18,6 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
-    navlink.classList.toggle('hidden');
   };
 
   
@@ -29,7 +28,9 @@ const Navbar = () => {
           <img className='h-1/2 w-1/3' src={logo} alt=""/>
           </NavLink>       
         </div>
-        <div className='navlink duration-500 md:static absolute bg-white rounded-2xl md:min-h-[5vh] min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5'>
+        <div className={`duration-500 md:hidden md:static absolute bg-white rounded-2xl md:min-h-[5vh] min-h-[60vh] left-0 ${
+          isMenuOpen ? 'top-0' : 'top-[-1000%]'
+        } md:w-auto w-full flex items-center px-5`}>
           <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 cursor-pointer'>
               <NavLink to='/'><li className=' active:text-red-500 '>Home</li></NavLink>
               <NavLink to='/products'><li className=' active:text-red-500'>Projects</li></NavLink>
@@ -45,7 +46,7 @@ const Navbar = () => {
                          lg:text-lg md:text-sm rounded-full' onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
          <ion-icon  onClick={toggleMenu}
           className="text-3xl cursor-pointer md:hidden z-50 text-black"
-          name={isMenuOpen ? 'menu' : 'close'}></ion-icon>
+          name={isMenuOpen ? 'close' : 'menu'}></ion-icon>
         </div>
     </div>
   )
