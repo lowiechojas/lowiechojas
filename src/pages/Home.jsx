@@ -11,7 +11,7 @@ const Home = () => {
       
         <div className='flex flex-wrap items-center justify-around bg-[#0c2b40] w-screen h-fit lg:pl-30 lg:pr-30'>
           <div className='grid gap-4 p-4 sm:p-0'>
-            <h1 className='text-7xl text-white sm:p-0'>
+            <h1 className='text-xl sm:text-7xl text-white'>
               <span className='italic font-sans font-bold text-shadow-lg/32'>YOU</span> envision it<br/>
               -I build it into <span className='italic font-sans font-extrabold text-shadow-lg/32'>REALITY.</span></h1>
             <NavLink to={'/contact'}>
