@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div className='grid'>
+    <div>
         <div className='flex items-center justify-around bg-[#0c2b40] w-screen h-fit pl-30 pr-30'>
           <div className='grid gap-4'>
             <h1 className='lg:text-7xl md:text-4xl sm:text-sm text-white'>

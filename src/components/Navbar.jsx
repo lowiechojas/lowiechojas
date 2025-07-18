@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/LH.png'
-
+import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
@@ -10,26 +10,43 @@ import { NavLink, useNavigate }  from 'react-router-dom'
 const Navbar = () => {
 
   const navigate = useNavigate();
+  const navlink = document.querySelector('.navlink');
+  //function to close and open the menu
+
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+    navlink.classList.toggle('hidden');
+  };
+
   
   return (
     <div className='z-50 p-2 bg-[#0c2b40] flex flex-row justify-evenly items-center sticky top-0'>
-     
-        <NavLink to="/">
-        <img className='h-1/2 w-1/3' src={logo} alt=""/>
-        </NavLink>       
-        
-        <ul className='text-white flex lg:text-2xl md:text-xl sm:text-sm  gap-10 p-3 cursor-pointer'>
-            <NavLink to='/'><li className='text-white active:text-red-500 '>Home</li></NavLink>
-            <NavLink to='/products'><li className='active:text-red-500'>Projects</li></NavLink>
-            <NavLink to='/about'><li className='active:text-red-500'>About</li></NavLink>
-            <NavLink to='/contact'><li className='active:text-red-500'>Contact</li></NavLink>
-        </ul>
+        <div>
+          <NavLink to="/">
+          <img className='h-1/2 w-1/3' src={logo} alt=""/>
+          </NavLink>       
+        </div>
+        <div className='navlink duration-500 md:static absolute bg-white rounded-2xl md:min-h-[5vh] min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5'>
+          <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 cursor-pointer'>
+              <NavLink to='/'><li className=' active:text-red-500 '>Home</li></NavLink>
+              <NavLink to='/products'><li className=' active:text-red-500'>Projects</li></NavLink>
+              <NavLink to='/about'><li className=' active:text-red-500'>About</li></NavLink>
+              <NavLink to='/contact'><li className=' active:text-red-500'>Contact</li></NavLink>
+          </ul>
+        </div>
 
-     <button className='hover:bg-green-500 hover:text-white
-                        h-auto lg:w-1/6 md:1/12 sm: 1/18 p-2 cursor-pointer
+        <div className='flex items-center gap-5'>
+          <button className='hover:bg-green-500 hover:text-white
+                        h-auto lg:w-[20vh] md:1/12 sm: 1/18 p-2 cursor-pointer
                          bg-blue-200 font-bold text-green-500
                          lg:text-lg md:text-sm rounded-full' onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
-
+         <ion-icon  onClick={toggleMenu}
+          className="text-3xl cursor-pointer md:hidden z-50 text-black"
+          name={isMenuOpen ? 'close' : 'menu'}></ion-icon>
+        </div>
     </div>
   )
 }
