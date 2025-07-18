@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef,useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import emailjs from '@emailjs/browser';
 
@@ -13,6 +13,15 @@ const Contact = () => {
   const [isSent, setIsSent] = React.useState(false);
   const [isError, setIsError] = React.useState(false);
 
+  //Make the text area dynamic
+  const textareaRef = useRef(null);
+
+  const handleChange = (e) => {
+    const textarea = textareaRef.current;
+    textarea.style.height = 'auto'; // Reset height
+    textarea.style.height = `${textarea.scrollHeight}px`; // Grow height dynamically
+    setMessage(e.target.value);
+  };
 
   const navigate = useNavigate()
   const form = useRef();
@@ -84,7 +93,7 @@ const Contact = () => {
                   </svg>
               </div>
           )}
-        <form className='bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4'  ref={form} onSubmit={sendEmail}>
+        <form className='bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 w-[50vw]'  ref={form} onSubmit={sendEmail}>
           <div className='mb-4'>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstname">Company Name</label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -92,6 +101,7 @@ const Contact = () => {
             onChange={(e) => setName(e.target.value)}
             value={name} type="text" placeholder='name'/>
           </div>
+
           <div className='mb-6'>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -99,14 +109,19 @@ const Contact = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email} type="email" placeholder='email'/>       
           </div>
+
           <div className='mb-6'>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Message</label>
-            <textarea className='shadow appearance-none border text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-            name='message'
-            onChange={(e) => setMessage(e.target.value)}
-            value={message} rows="4" cols="50">
-
+            <textarea
+              className='shadow appearance-none border text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              name='message'
+              onChange={handleChange}
+              value={message}
+              ref={textareaRef}
+              rows={2}
+              placeholder='message'>
             </textarea>
+
            </div>
            <button
               type="submit"
