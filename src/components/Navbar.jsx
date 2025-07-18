@@ -12,14 +12,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   
   return (
-    <div className='z-50 p-2 bg-[#0c2b40] flex flex-row justify-around items-center sticky top-0'>
+    <div className='z-50 p-2 bg-[#0c2b40] flex flex-row justify-evenly items-center sticky top-0'>
      
         <NavLink to="/">
         <img className='h-1/2 w-1/3' src={logo} alt=""/>
         </NavLink>       
         
-        <ul className='text-white flex gap-4 p-3 cursor-pointer'>
-            <NavLink to='/'><li className='text-white active:text-red-500'>Home</li></NavLink>
+        <ul className='text-white flex lg:text-2xl md:text-xl sm:text-sm  gap-10 p-3 cursor-pointer'>
+            <NavLink to='/'><li className='text-white active:text-red-500 '>Home</li></NavLink>
             <NavLink to='/products'><li className='active:text-red-500'>Projects</li></NavLink>
             <NavLink to='/about'><li className='active:text-red-500'>About</li></NavLink>
             <NavLink to='/contact'><li className='active:text-red-500'>Contact</li></NavLink>

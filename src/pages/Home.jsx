@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../assets/tagline.png'
+import fb from '../assets/fb_icon.png'
+import linkedin from '../assets/linkedin_icon.png'
 import { NavLink } from 'react-router-dom'
 
 
@@ -16,8 +18,18 @@ const Home = () => {
             </NavLink>
           </div>
 
-          <div className='z-5 border-green-500 size-fit p-4'>
-            <img className='drop-shadow-md rounded-full h-auto lg:w-150 md:w-1/2 object-fill' src={logo} alt="" />  
+          <div className='flex overflow-auto z-5 gap-4 border-green-500 size-fit p-4'>
+            <div>
+            <img className='flex overflow-autodrop-shadow-md rounded-full h-auto lg:w-150 md:w-1/2 object-fill' src={logo} alt="" />  
+            </div>
+            <div className='flex flex-col overflow-auto gap-4 items-center justify-center'>
+              <div>
+               <a href="https://www.facebook.com/lowiechojas" target='blank'><img className="h-10 p-2 rounded-full bg-white" src={fb} alt="" /></a>
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/lowie-hojas-b5076ba4/" target="blank"><img className="h-10 p-2 rounded-full bg-white" src={linkedin} alt="" /></a>
+              </div>
+            </div>
           </div>
         </div>
 

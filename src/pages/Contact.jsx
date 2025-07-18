@@ -56,30 +56,32 @@ const Contact = () => {
 
 
   return (
-    <div className='grid grid-flow-row auto-rows-auto items-center justify-center bg-[#0c2b45] h-dvh w-screen p-4'>
+    <div className='flex items-center justify-center bg-[#0c2b45] h-dvh w-screen p-4'>
 
             {isLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 z-20">
+              <div className="absolute inset-0 flex items-center justify-center bg-blue-400 bg-opacity-40 z-20">
                 <svg
-                  className="animate-spin h-12 w-12 text-white"
+                  className="animate-spin h-5 w-5 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 50 50"
                 >
                   <circle
                     className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
+                    cx="25"
+                    cy="25"
+                    r="20"
                     stroke="currentColor"
-                    strokeWidth="4"
+                    strokeWidth="5"
                   />
                   <path
                     className="opacity-75"
                     fill="currentColor"
-                    d="M4 12a8 8 0 018-8v8H4z"
+                    d="M25 5
+                      a20 20 0 0 1 0 40
+                      a20 20 0 0 1 0 -40"
                   />
-                </svg>
+                  </svg>
               </div>
           )}
         <form className='bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4'  ref={form} onSubmit={sendEmail}>
