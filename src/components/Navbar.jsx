@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/LH.png'
-import { useState } from 'react'
+import { useEffect,useState,useRef } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
@@ -8,6 +8,11 @@ import { NavLink, useNavigate }  from 'react-router-dom'
 
 
 const Navbar = () => {
+
+
+  //added for touch
+  const menuRef = useRef(null)
+  
 
   const navigate = useNavigate();
   const navlink = document.querySelector('.navlink');
@@ -20,6 +25,23 @@ const Navbar = () => {
     setIsMenuOpen(prev => !prev);
   };
 
+    // 🔻 Close menu on outside click/tap
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [])
+
   
   return (
     <div className='z-50 p-2 bg-[#0c2b40] flex flex-row justify-evenly items-center sticky top-0'>
@@ -28,9 +50,12 @@ const Navbar = () => {
           <img className='h-1/2 w-1/3' src={logo} alt=""/>
           </NavLink>       
         </div>
-        <div className={`duration-500 md:static absolute bg-white rounded-2xl md:min-h-[5vh] min-h-[60vh] left-0 ${
-          isMenuOpen ? 'top-0' : 'top-[-1000%]'
-        } md:w-auto w-full flex items-center px-5`}>
+
+        <div
+        ref={menuRef}
+        className={`duration-500 md:static absolute bg-white rounded-2xl md:min-h-[5vh] min-h-[60vh] left-0
+          ${isMenuOpen ? 'top-0' : 'top-[-1000%]'}
+        md:w-auto w-full flex items-center px-5`}>
           <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 cursor-pointer'>
               <NavLink to='/'><li className=' active:text-red-500 '>Home</li></NavLink>
               <NavLink to='/products'><li className=' active:text-red-500'>Projects</li></NavLink>
