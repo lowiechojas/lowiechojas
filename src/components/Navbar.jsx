@@ -15,7 +15,7 @@ const Navbar = () => {
     <div className='z-50 p-2 bg-[#0c2b40] flex flex-row justify-around items-center sticky top-0'>
      
         <NavLink to="/">
-        <img className='h-1/2 w-1/3' src={logo} alt="" width="120px" />
+        <img className='h-1/2 w-1/3' src={logo} alt=""/>
         </NavLink>       
         
         <ul className='text-white flex gap-4 p-3 cursor-pointer'>
@@ -25,7 +25,10 @@ const Navbar = () => {
             <NavLink to='/contact'><li className='active:text-red-500'>Contact</li></NavLink>
         </ul>
 
-     <button className='hover:bg-green-500 hover:text-white w-1/8 p-2 bg-blue-200 font-bold text-green-500 rounded-full' onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
+     <button className='hover:bg-green-500 hover:text-white
+                        h-auto lg:w-1/6 md:1/12 sm: 1/18 p-2 cursor-pointer
+                         bg-blue-200 font-bold text-green-500
+                         lg:text-lg md:text-sm rounded-full' onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
 
     </div>
   )
