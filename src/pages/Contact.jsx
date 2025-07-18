@@ -30,7 +30,6 @@ const Contact = () => {
       })
       .then(
         () => {
-          window.alert('Message sent successfully!');
           console.log('SUCCESS!');
         },
         (error) => {
