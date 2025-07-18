@@ -8,7 +8,8 @@ import { NavLink } from 'react-router-dom'
 const Home = () => {
   return (
     <div>
-        <div className='flex items-center justify-around bg-[#0c2b40] w-screen h-fit pl-30 pr-30'>
+      
+        <div className='flex flex-wrap items-center justify-around bg-[#0c2b40] w-screen h-fit pl-30 pr-30'>
           <div className='grid gap-4'>
             <h1 className='lg:text-7xl md:text-4xl sm:text-sm text-white'>
               <span className='italic font-sans font-bold text-shadow-lg/32'>YOU</span> envision it<br/>
@@ -20,21 +21,13 @@ const Home = () => {
 
           <div className='flex overflow-auto z-5 gap-4 border-green-500 size-fit p-4'>
             <div>
-            <img className='flex overflow-autodrop-shadow-md rounded-full h-auto lg:w-150 md:w-1/2 object-fill' src={logo} alt="" />  
-            </div>
-            <div className='flex flex-col overflow-auto gap-4 items-center justify-center'>
-              <div>
-               <a href="https://www.facebook.com/lowiechojas" target='blank'><img className="h-10 p-2 rounded-full bg-white" src={fb} alt="" /></a>
-              </div>
-              <div>
-                <a href="https://www.linkedin.com/in/lowie-hojas-b5076ba4/" target="blank"><img className="h-10 p-2 rounded-full bg-white" src={linkedin} alt="" /></a>
-              </div>
+              <img className='flex overflow-autodrop-shadow-md rounded-full h-auto lg:w-[25vw] md:w-1/2 object-fill' src={logo} alt="" />  
             </div>
           </div>
         </div>
+      
 
-
-        <div className='flex items-center justify-around bg-[#0c2b47] p-4'>
+        <div className='flex items-center justify-around bg-[#0c2b47] w-[100vw] p-4'>
           <div>
             <h1>School Attended</h1>
           </div>

@@ -28,7 +28,7 @@ const Navbar = () => {
           <img className='h-1/2 w-1/3' src={logo} alt=""/>
           </NavLink>       
         </div>
-        <div className={`duration-500 md:hidden md:static absolute bg-white rounded-2xl md:min-h-[5vh] min-h-[60vh] left-0 ${
+        <div className={`duration-500 md:static absolute bg-white rounded-2xl md:min-h-[5vh] min-h-[60vh] left-0 ${
           isMenuOpen ? 'top-0' : 'top-[-1000%]'
         } md:w-auto w-full flex items-center px-5`}>
           <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 cursor-pointer'>
