@@ -42,9 +42,9 @@ const Navbar = () => {
     }
   }, [])
 
-  
+  //bg-[#0c2b40]
   return (
-    <div className='z-50 p-2 bg-[#0c2b40] flex flex-row justify-evenly items-center sticky top-0'>
+    <div className='z-50 p-2 bg-white flex flex-row justify-evenly items-center sticky top-0'>
         <div>
           <NavLink to="/">
           <img className='h-1/2 w-1/3' src={logo} alt=""/>
