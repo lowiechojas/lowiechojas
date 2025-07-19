@@ -18,7 +18,7 @@ const About = () => {
 
 
         <div className='flex flex-row flex-wrap gap-4 w-[100vw] h-auto items-top justify-evenly '>
-          <div className='flex flex-col gap-4 border w-full sm:w-auto'>
+          <div className='flex flex-col gap-4 shadow-md rounded-md w-full sm:w-auto bg-white text-black'>
             <div className='flex justify-center'>
               <h1 className=''>Academic</h1>
             </div>
@@ -34,7 +34,7 @@ const About = () => {
             </ul>
           </div>
 
-          <div className='flex flex-col gap-4 border p-4 w-full sm:w-auto'>
+          <div className='flex flex-col gap-4 border w-full sm:w-auto bg-white text-black rounded-md'>
             <div className='flex justify-center'>
               <h1 className=''>Experience</h1>
             </div>
