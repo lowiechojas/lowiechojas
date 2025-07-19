@@ -9,6 +9,9 @@
   animation: fade-in 2s linear forwards;
 }
 
+.cta{
+  animation: border-roll 1s infinite;
+}
 /*
 *{
   margin: 0;

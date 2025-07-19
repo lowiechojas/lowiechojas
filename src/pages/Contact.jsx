@@ -130,7 +130,7 @@ const Contact = () => {
             >
               Send Email
             </button>
-             {isSent && <p className='flex align-top text-green-500 text-3xl '>Email sent successfully!</p>}
+             {isSent && <p className='flex align-top text-green-500 text-2xl '>Email sent successfully!</p>}
             {isError && <p className='flex text-red-500'>Failed to send email. Please try again.</p>}
         </form>
 
