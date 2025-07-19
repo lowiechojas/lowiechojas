@@ -66,9 +66,10 @@ const Navbar = () => {
 
         <div className='flex items-center gap-5'>
           <button className='hover:bg-green-500 hover:text-white
-                        hidden sm:flex h-auto lg:w-[20vh] w-auto text-[10px] sm:p-2 p-0 cursor-pointer
+                        h-auto lg:w-[20vh] w-auto text-[10px] sm:p-2 p-0 cursor-pointer
                         bg-blue-200 font-bold text-green-500
-                        sm:text-lg rounded-full' onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
+                        sm:text-lg rounded-full hidden sm:block'
+                        onClick={()=> navigate('/contact',{replace:true})}>Let's work!</button>
          <ion-icon  onClick={toggleMenu}
           className="text-3xl cursor-pointer md:hidden z-50 text-black"
           name={isMenuOpen ? 'close' : 'menu'}></ion-icon>

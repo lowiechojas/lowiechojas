@@ -12,8 +12,8 @@ const Home = () => {
         <div className='flex flex-wrap sm:flex-nowrap items-center justify-around bg-[#0c2b40] w-screen h-[50vh] lg:pl-30 lg:pr-30'>
           <div className='grid gap-4 p-4 sm:p-0'>
             <h1 className='text-2xl sm:text-6xl text-white'>
-              <span className='italic font-sans font-bold text-shadow-lg/32'>YOU</span> envision it<br/>
-              -I build it into <span className='italic font-sans font-extrabold text-shadow-lg/32'>REALITY.</span></h1>
+              <span className='italic font-sans font-bold text-shadow-lg/32 text-green-500'>YOU</span> envision it<br/>
+              -I build it into <span className='italic font-sans font-extrabold text-shadow-lg/32 text-green-500'>REALITY.</span></h1>
             <NavLink to={'/contact'}>
             <button className='hover:bg-green-500 hover:text-white h-auto w-auto sm:w-[25vw] sm:text-lg text-[10px] p-2 bg-blue-200 font-bold text-green-500 rounded-full'>Let's work!</button>
             </NavLink>
@@ -21,7 +21,7 @@ const Home = () => {
 
           
             <div className='flex items-center justify-around p-4 sm:pr-8'>
-              <img className='flex overflow-auto drop-shadow-md rounded-full h-auto w-auto sm:h-auto sm:w-[30vw] object-fill' src={logo} alt="" />  
+              <img className='flex overflow-auto drop-shadow-md shadow-green-500 rounded-full h-auto w-auto sm:h-auto sm:w-[30vw] object-fill' src={logo} alt="" />  
             </div>
           
         </div>
