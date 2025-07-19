@@ -1,5 +1,5 @@
 import React from 'react'
-import prof from '../assets/lowieguitar.JPG'
+import prof from '../assets/lowieguitar.JPG';
 
 const About = () => {
   return (
